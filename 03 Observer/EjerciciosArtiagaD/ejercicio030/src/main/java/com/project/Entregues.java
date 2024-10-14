@@ -3,31 +3,54 @@ package com.project;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Entregues {
-    private ArrayList<Producte> productes;
+    private List<Producte> productes;
+    private PropertyChangeSupport support;
 
-    private PropertyChangeSupport support = new PropertyChangeSupport(this);
-
-    public Entregues(ArrayList<Producte> productes) {
-        this.productes = productes;
+    public Entregues() {
+        this.productes = new ArrayList<>();
+        this.support = new PropertyChangeSupport(this);
     }
 
-    public ArrayList<Producte> getProductes() {
+    public List<Producte> getProductes() {
         return productes;
     }
 
-    public void setProductes(ArrayList<Producte> productes) {
-        ArrayList<Producte> oldProductes = this.productes;
-        this.productes = productes;
-        support.firePropertyChange("productes", oldProductes, productes);
+    public void addProducte(Producte producte) {
+        productes.add(producte);
+        support.firePropertyChange("entreguesAdd", null, producte.getId());
+        System.out.println("S'ha afegit el producte amb id " + producte.getId() + " a la llista d'entregues.");
     }
 
-        public void addPropertyChangeListener(PropertyChangeListener listener) {
-        support.addPropertyChangeListener(listener);
+    public void removeProducte(int id) {
+        Producte producteToRemove = null;
+        for (Producte p : productes) {
+            if (p.getId() == id) {
+                producteToRemove = p;
+                break;
+            }
+        }
+        if (producteToRemove != null) {
+            productes.remove(producteToRemove);
+            support.firePropertyChange("entreguesRemove", producteToRemove.getId(), null);
+            System.out.println("S'ha entregat el producte amb id " + id);
+        }
     }
 
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        support.removePropertyChangeListener(listener);
+    public void addPropertyChangeListener(PropertyChangeListener pcl) {
+        support.addPropertyChangeListener(pcl);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener pcl) {
+        support.removePropertyChangeListener(pcl);
+    }
+
+    @Override
+    public String toString() {
+        return "Entregues{" +
+                "productes=" + productes +
+                '}';
     }
 }
