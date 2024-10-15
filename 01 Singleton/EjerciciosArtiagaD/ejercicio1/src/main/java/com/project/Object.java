@@ -22,6 +22,6 @@ public final class Object {
 
     @Override
     public String toString() {
-        return "Nom: " + instance.nom + " Cognom: " + instance.cognom + " Edat: " + instance.edat;
+        return "Nom: " + this.nom + " Cognom: " + this.cognom + " Edat: " + this.edat;
     }
 }

@@ -49,8 +49,6 @@ public class Entregues {
 
     @Override
     public String toString() {
-        return "Entregues{" +
-                "productes=" + productes +
-                '}';
+        return "Entregues: {" + "productes = " + productes + '}';
     }
 }

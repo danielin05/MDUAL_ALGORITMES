@@ -57,9 +57,6 @@ public class Magatzem {
 
     @Override
     public String toString() {
-        return "Magatzem{" +
-                "productes=" + productes +
-                ", capacitat=" + capacitat +
-                '}';
+        return "Magatzem: {" + "productes = " + productes + ", capacitat=" + capacitat + '}';
     }
 }
