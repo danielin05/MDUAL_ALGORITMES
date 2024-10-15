@@ -60,6 +60,4 @@ public interface Dao<T> {
 
 ## Exemples
 
-[Exemple DAO](https://github.com/optimisme/DAM-JavaExempleDAO)
-
-[Exemple SQLite](https://github.com/optimisme/DAM-JavaExempleSQLite)
+Els exemples mostren com ineractuar amb dades **.json** o **SQLite** a través de **DAO**

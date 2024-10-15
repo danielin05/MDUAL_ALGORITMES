@@ -12,7 +12,7 @@
 
 Crea un programa “Main.java” que implementi la gestió de dades (en arxius .json) d’un apassionat per la programació. La base de dades estarà en una carpeta tindrà els següents arxius .json:
 
-- llenguatges.json, conté una llista amb almenys 5 llenguatges de programació amb atributs:
+- **llenguatges.json**, conté una llista amb almenys 5 llenguatges de programació amb atributs:
 
     id (int, identificador del llenguatge a la base de dades)
     nom (String, nom del llenguatge)
@@ -20,14 +20,14 @@ Crea un programa “Main.java” que implementi la gestió de dades (en arxius .
     dificultat (String dificulttat de programar-lo entre facil, mitja i difícil)
 popularitat (int per ordenar-los segons popularitat)
 
-- eines.json, conté una llista amb almenys 5 eines de programació amb atributs
+- **eines.json**, conté una llista amb almenys 5 eines de programació amb atributs
 
     id (int, identificador de la eina la base de dades)
     nom (String, nom de la eina)
     any (int, any en què va aparèixer)
 llenguatges (arraylist amb els identificadors dels llenguatges que accepta)
 
-- software.json, conté una llista amb almenys 10 programes (o software) coneguts, desenvolupats amb els llenguatges i les eines anteriors
+- **software.json**, conté una llista amb almenys 10 programes (o software) coneguts, desenvolupats amb els llenguatges i les eines anteriors
 
     id (int, identificador del software a la base de dades)
     nom (String, nom del software)
@@ -36,13 +36,13 @@ llenguatges (arraylist amb els identificadors dels llenguatges amb què s’ha d
 
 Un cop tinguis aquesta base de dades:
 
-Crea els objectes Java que corresponent a cada tipus d’objecte anterior
+- Crea els objectes Java que corresponent a cada tipus d’objecte anterior
 
-(ObjEina.java, ObjLlenguatge.java i ObjSoftware.java)
+    (ObjEina.java, ObjLlenguatge.java i ObjSoftware.java)
 
-Per cada un d’aquests objectes JAVA crea el Dao corresponent basat en CRUD
+- Per cada un d’aquests objectes JAVA crea el Dao corresponent basat en CRUD
 
-(DaoEina.java, DaoLlenguatge.java, DaoSoftware.java)
+    (DaoEina.java, DaoLlenguatge.java, DaoSoftware.java)
 
 Fes funcions Update específiques per cada atribut, al seu Dao corresponent, és a dir:
 
@@ -153,8 +153,30 @@ public class Main {
        daoSoftware.delete(10);
    }
 }
-
+```
 
 <center><img src="./assets/SortidaEx0.png" style="max-width: 90%; width: 400px; max-height: 400px;" alt="">
 <br/></center>
 <br/>
+
+Sortida esperada:
+```text
+Eina: 0 Visual Studio Code, 2015 - [0, 1, 2, 3, 4]
+Eina: 1 Xcode, 2003 - [0, 1, 2]
+Eina: 2 Eclipse, 2001 - [4]
+Eina: 3 Vim, 1991 - [0, 1, 2, 3, 4]
+Eina: 4 Nano, 1999 - [0, 1, 2, 3, 4]
+Eina: 5 TextEdit, 2001 - [0, 1, 3]
+Llenguatge: 0 C, 1972 - dificil/8
+Llenguatge: 1 C++, 1983 - mitja/7
+Llenguatge: 2 Objective C, 1984 - dificil/2
+Llenguatge: 3 JavaScript, 1996 - facil/6
+Llenguatge: 4 Java, 1995 - mitja/5
+Llenguatge: 5 Dart+Flutter, 2018 - mitja/9
+Software: 0 Visual Studio Code, 2015 - [0, 1, 2, 3, 4]
+Software: 1 Xcode, 2003 - [0, 1, 2]
+Software: 2 Eclipse, 2001 - [4]
+Software: 3 Vim, 1991 - [0, 1, 2, 3, 4]
+Software: 4 Nano, 1999 - [0, 1, 2, 3, 4]
+Software: 10 webTool, 2022 - [3]
+```
